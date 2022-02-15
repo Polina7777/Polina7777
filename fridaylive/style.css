@@ -1,0 +1,14 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div {
+  display: flex;
+}
+
+/*# sourceMappingURL=style.css.map */
