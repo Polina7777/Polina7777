@@ -1,6 +1,6 @@
 import "./style.scss";
 import { keys } from "./data.js";
-
+//import { generateAudio } from "./audio.js";
 
 class Piano {
     constructor(Keys) {
@@ -12,7 +12,7 @@ class Piano {
     }
 
 
-    generatePianoKey = (title, type,keyButton,audio) => {
+    generatePianoKey = (title, type,keyButton,audioSrc) => {
         const key = document.createElement('div');
         key.className = (`key  key_${type}  ${title.ru}`);
         key.id = keyButton;
@@ -22,6 +22,9 @@ class Piano {
         const keyNameEn = document.createElement('p');
         keyNameEn.className = ('key_name key_name_en');
         keyNameEn.innerText = (`${title.en}`);
+        const audio = document.createElement('audio');
+        audio.src = audioSrc;
+        
         const leftStep = this.keyWidthWhite * this.whiteIndex;
 
         if (type === 'white') {
@@ -33,13 +36,16 @@ class Piano {
             key.style.left = `${((leftStep + this.keyWidthWhite) - this.keyWidthBlack) - 35}px`;
 
         }
+
+
         key.append(keyNameRu);
         key.append(keyNameEn);
+        key.append(audio);
         return key;
     }
     generatePart = (item, colorkeys) => {
         const part = [];
-            part.push(...colorkeys.map((item, index) => this.generatePianoKey(item.title, item.type, item.keyButton)));
+            part.push(...colorkeys.map((item, index) => this.generatePianoKey(item.title, item.type, item.keyButton,item.audio)));
         
         return part;
     }
@@ -86,6 +92,7 @@ window.onload = function () {
     const piano = document.querySelector('#container');
     newPiano.generatePiano(piano);
     generateLanguageButton();
+
   
 }
 const generateLanguageButton = () => {
@@ -113,15 +120,16 @@ const eventHandlerLanguageButton = (button,lang) => {
 }
 
 document.addEventListener('keydown', (e) => {
-   console.log(e);
    const klawkey = document.getElementById(e.code);
    klawkey?.classList.add(`active`);
+   klawkey.querySelector('audio').play();
+   console.log(klawkey.querySelector('audio'))
 }
 )
 document.addEventListener('keyup', (e) => {
-    console.log(e);
      const klawkey = document.getElementById(e.code);
      klawkey?.classList.remove(`active`);
+   
  }
 
 )

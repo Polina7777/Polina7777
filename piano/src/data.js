@@ -7,7 +7,7 @@ export const keys = [
             "ru": "ДО",
             "en": "C"
         },
-        "audio": " ",
+        "audio": "./assets/audio/do.mp3",
         "keyButton": "KeyQ"
     },
     {
@@ -25,7 +25,7 @@ export const keys = [
             "ru": "РЕ",
             "en": "D"
         },
-        "audio": "",
+        "audio": "./assets/audio/re.mp3",
         "keyButton": "KeyW"
     },
     {
@@ -43,7 +43,7 @@ export const keys = [
             "ru": "МИ",
             "en": "E"
         },
-        "audio": "",
+        "audio": "./assets/audio/mi.mp3",
         "keyButton": "KeyE"
     },
     {
@@ -52,7 +52,7 @@ export const keys = [
             "ru": "ФА",
             "en": "F"
         },
-        "audio": "",
+        "audio": "./assets/audio/fa.mp3",
         "keyButton": "KeyR"
     },
     {
@@ -70,7 +70,7 @@ export const keys = [
             "ru": "СОЛЬ",
             "en": "G"
         },
-        "audio": "",
+        "audio": "./assets/audio/sol.mp3",
         "keyButton": "KeyT"
     },
     {
@@ -88,7 +88,7 @@ export const keys = [
             "ru": "ЛЯ",
             "en": "A"
         },
-        "audio": "",
+        "audio": "./assets/audio/lja.mp3",
         "keyButton": "KeyY"
     },
     {
@@ -106,7 +106,7 @@ export const keys = [
             "ru": "СИ",
             "en": "B"
         },
-        "audio": "",
+        "audio": "./assets/audio/si.mp3",
         "keyButton": "KeyU"
     },
     {

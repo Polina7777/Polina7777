@@ -5,7 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
-  mode: 'production',
+  mode: 'development',
+  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -28,12 +29,12 @@ module.exports = {
     ],
    
   },
-  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' }),new MiniCssExtractPlugin()
-//   new CopyPlugin({
-//     patterns: [
-//       { from: "assets", to: "assets" },
-//     ],
-//  }),
+  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' }),new MiniCssExtractPlugin(),
+  new CopyPlugin({
+    patterns: [
+      { from: "assets", to: "assets" },
+    ],
+ }),
 ],
   
   }
